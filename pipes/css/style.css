@@ -1,0 +1,411 @@
+*, html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+}
+
+/* hashtag means id */
+#game {
+	position: absolute;
+	font-size: 40px; /* one M | em */
+	left: 0;
+	top: 0;
+	width: 8em;
+	height: 12em;
+	font-family: HeavyDock;
+	color: rgb(0,0,0); /* change to blue */
+
+	/* star background */
+/*	background-color:black;
+	background-image:
+	radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+	radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+	radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+	radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;*/
+
+
+	/* brick background */
+	background-color: rgb(72, 72, 72);
+	background-image: 	linear-gradient(335deg, rgb(96, 96, 96) 23px, transparent 23px),
+						linear-gradient(155deg, rgb(128, 128, 128) 23px, transparent 23px),
+						linear-gradient(335deg, rgb(96, 96, 96) 23px, transparent 23px),
+						linear-gradient(155deg, rgb(128, 128, 128) 23px, transparent 23px);
+	background-size: 58px 58px;	
+	background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+
+	/*initial background*/
+/*	background-color: rgb(60,60,40);
+	background-size:10px 10px;
+	background-image:
+		linear-gradient(
+			45deg,transparent 0%, rgb(20,20,20) 25%,
+			transparent 50%, rgb(20,20,20) 75%, transparent 100%
+		),
+		linear-gradient(
+			-45deg,transparent 0%, rgb(20,20,20) 25%,
+			transparent 50%, rgb(20,20,20) 75%, transparent 100%
+		);*/
+}
+
+/* period means class */
+#game .screen {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: 10;
+}
+
+#game .active {
+	display: block;
+}
+
+#screen-splash {
+	text-align: center;
+	padding-top: 2.5em;
+}
+
+#screen-splash .continue {
+	cursor: pointer;
+	font-size: 0.75em;
+	margin-top:0.15em;
+	display: none;
+}
+
+.progress {
+	margin: 0 auto;
+	margin-top:2.5em;
+	width: 6em;
+	height: 0.5em;
+	border-radius: 0.5em;
+	overflow: hidden;
+	border: 2px solid rgb(0,0,0); /* border doesn't require em currently */
+}
+
+.progress .indicator {
+	background-color: rgb(0, 153, 255);
+	height: 100%;
+	width: 0%;
+}
+
+.logo {
+	font-family: SprayMe;
+	font-size: 2em;
+	line-height: 1em;
+	margin: 0;
+	text-align: center;
+	color: rgb(0,0,0);
+
+	/*rotation*/
+	-moz-transform: rotate(7deg);
+	-webkit-transform: rotate(7deg);
+	transform: rotate(7deg);
+
+	text-shadow: 0.025em 0.025em 0.05em rgb(0, 153, 255),
+				-0.025em -0.025em 0.05em rgb(0, 153, 255),
+				0.10em 0.15em 0.15em rgb(0, 153, 255);
+}
+
+/* fix this */
+#screen-install-apple {
+	padding-top: 0.5em;
+	text-align: center;
+}
+/* fix this */
+#screen-install-apple span {
+	font-size: 0.75em;
+	display: inline-block;
+	padding: 0 0.5em;
+}
+
+#screen-menu {
+	padding-top: 1em;
+}
+
+ul.menu {
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+ul.menu li {
+	margin: 0.5em 0;
+}
+
+ul.menu li button {
+	font-family: HeavyDock, sans-serif;
+	font-size: 0.6em;
+	color: rgb(0, 0, 0);
+
+	width: 10em;
+	height: 1.5em;
+	background: rgb(255,255,255);
+	border: 0.1em solid rgb(0,0,0);
+	border-radius: 0.5em;
+	-webkit-box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+	box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+}
+
+
+#screen-game .game-board {
+	position: relative;
+	width: 8em;
+	height: 8em;
+}
+
+#screen-game .game-board .board-bg,
+#screen-game .game-board .board {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#screen-game .game-board .board {
+	z-index: 10;
+}
+
+#screen-game .game-board .board-bg {
+	z-index: 0;
+}
+
+#screen-game .game-hud {
+	position:relative;
+	height:2em;
+	width:8em;
+	margin: 0 1.5em;
+}
+
+#screen-game .game-hud .hud {
+	width:100%;
+	height:100%;
+	z-index: 10;
+}
+
+ul.game-hud {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 0.5em;
+}
+
+ul.game-hud li {
+	display:inline;
+}
+
+ul.game-hud li button.water {
+	height: 50px;
+	width: 50px;
+	border-radius: 50px;
+	border: 1px solid #fff;
+}
+
+#screen-game .pause-overlay {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: rgba(20, 20, 20, 0.98);
+}
+
+#screen-game .pause-overlay .pause-text {
+	width: 100%;
+	text-align: center;
+	margin-top: 50%;
+	font-family: SprayMe;
+	font-size: 1.0em;
+	color: rgb(255,255,255);
+}
+
+/* change bg + font */
+
+#screen-game .final-overlay {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: rgb(72, 72, 72);
+	background-image: 	linear-gradient(335deg, rgb(96, 96, 96) 23px, transparent 23px),
+						linear-gradient(155deg, rgb(128, 128, 128) 23px, transparent 23px),
+						linear-gradient(335deg, rgb(96, 96, 96) 23px, transparent 23px),
+						linear-gradient(155deg, rgb(128, 128, 128) 23px, transparent 23px);
+	background-size: 58px 58px;	
+	background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+	/*background: rgba(20, 20, 20);*/
+}
+
+#screen-game .final-overlay .final-text {
+	width: 100%;
+	text-align: center;
+	margin-top: 25%;
+	margin-bottom:25%;
+	font-family: SprayMe;
+	font-size: 1.5em;
+	color: rgb(0,0,0);
+	text-shadow: 0.025em 0.025em 0.05em rgb(0, 153, 255),
+				-0.025em -0.025em 0.05em rgb(0, 153, 255),
+				0.10em 0.15em 0.15em rgb(0, 153, 255);
+}
+
+ul.finalScreen {
+	list-style: none;
+	margin: 0 0.75em;
+	padding: 0;
+	text-align: center;
+}
+
+ul.finalScreen li {
+	font-family: HeavyDock, sans-serif;
+	cursor: pointer;
+	font-size: 0.6em;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	margin-top:1em;
+	width: 10em;
+	height: 1.5em;
+	background: rgb(255,255,255);
+	border: 0.1em solid rgb(0,0,0);
+	border-radius: 0.5em;
+	-webkit-box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+	box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+}
+
+ul.hud-overlay {
+	list-style: none;
+}
+
+ul.hud-overlay li {
+	display:inline;
+}
+
+ul.hud-overlay li.timer {
+	position:absolute;
+	border: solid white 2px;
+	background: red;
+	font-family: AlarmClock;
+	color: white;
+	margin-left:0.75em;
+	font-size:1.25em;
+}
+
+ul.hud-overlay li .game-over {
+/*	position:absolute;*/
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	background: red;
+	font-size:0.25em;
+	color:white;
+	margin-left:68%;
+	border: 2px solid white;
+}
+
+
+.screen footer {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	height: 1em;
+	width: 100%;
+}
+
+.screen footer button {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+	padding: 0 0.75em;
+	font-family: Geo, sans-serif;
+	font-size: 0.5em;
+	color: rgb(255,255,255);
+	background: rgb(0,0,0);
+	border: 1px solid rgb(255,255,255);
+	border-radius: 0.2em;
+}
+
+.screen footer button.exit {
+	margin-left:1.75em;
+	margin-right:25%;
+}
+
+
+ul.about-text {
+	list-style:none;
+	text-align: center;
+	margin-top: 5em;
+	font-size: 0.35em;
+}
+ul.about-text li {
+	margin-top:1em;
+}
+
+footer.return {	
+	font-family: HeavyDock, sans-serif;
+	cursor: pointer;
+	text-align: center;
+	font-size: 0.6em;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	margin-left: 3em;
+	margin-bottom: 2em;
+	width: 7.5em;
+	height: 1.5em;
+	background: rgb(255,255,255);
+	border: 0.1em solid rgb(0,0,0);
+	border-radius: 0.5em;
+	-webkit-box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+	box-shadow: 0.2em 0.2em 0.3em rgb(0, 153, 255);
+}
+
+
+
+@font-face {
+	font-family: "Slackey";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Slackey.woff") format("woff"),
+		 url("../fonts/Slackey.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Geo";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Geo.woff") format("woff"),
+		 url("../fonts/Geo.ttf") format("truetype");
+}
+
+/* Underneath editable */
+
+@font-face {
+	font-family: "SprayMe";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/sprayme.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "AlarmClock";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/alarm_clock.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "HeavyDock";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/heavy_dock11.otf") format("opentype");
+}

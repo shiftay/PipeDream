@@ -1,0 +1,488 @@
+/*#game {
+	font-size: 32px;
+}*/
+
+/* iPhone */
+@media screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+  	#game {
+  		height: 100%;
+  		width: 100%;
+      font-size:32px;
+  	}
+
+  	.logo {
+  		font-size: 3em;
+  		padding-top: 0.5em;
+  		padding-bottom: 1.25em;
+  	}
+
+
+    #screen-game .game-board {
+      position: relative;
+      width: 12em;
+      height: 12em;
+    }
+
+    #screen-game .game-board .board-bg,
+    #screen-game .game-board .board {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #screen-game .game-board .board {
+      z-index: 10;
+    }
+
+    #screen-game .game-board .board-bg {
+      z-index: 0;
+    }
+
+    #screen-game .game-hud {
+      position:relative;
+      height:2em;
+      width:8em;
+      margin: 0 2.25em;
+
+    }
+
+    #screen-game .game-hud .hud {
+      position: absolute;
+      width:100%;
+      height:100%;
+      z-index: 10;
+    }
+
+    ul.hud-overlay {
+      margin-top:0.5em;
+    }
+
+    ul.hud-overlay li.timer {
+      font-size:1.5em;
+      margin-left:0.75em;
+    }
+
+    ul.hud-overlay li .game-over {
+      position:absolute;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background: red;
+      font-size:0.35em;
+      color:white;
+
+    }
+
+    #screen-game footer {
+      margin-left:15%;
+    }
+
+    #screen-game .final-overlay .final-text {
+      text-align:center;
+      font-size:2.5em;
+    }
+
+    #screen-game ul.finalScreen {
+      margin-left: 2.5em;
+    }
+
+}
+
+@media screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+  	#game {
+  		height: 100%;
+  		width: 100%;
+  	}
+
+  	#screen-splash .logo {
+  		padding-bottom: 0.5em;
+      font-size: 2em;
+  	}
+
+    #screen-splash {
+      padding-top: 0.75em;
+    }
+
+    .progress {
+      margin-top: 1em;
+    }
+
+  	#screen-install .logo {
+  		padding-bottom: 1em;
+  	}
+
+  	#screen-install span {
+  		display: inline-block;
+  	}
+
+/*    #screen-game .game-board {
+      position: relative;
+      width: 8em;
+      height: 8em;
+      margin-left: 6em;
+    }*/
+
+	.logo {
+  		font-size: 1.5em;
+  	}
+
+  	ul.menu li {
+		margin: 0.2em 0;
+	}
+
+  	ul.menu li button {
+  		line-height: 0.05em;
+  		font-size: 0.4em;
+  		width: 8.5em;
+  		height: 1.5em;
+  	}
+
+
+
+
+    #screen-game .game-board {
+      float:left;
+      height:8em;
+      width:8em;
+    }
+
+    #screen-game .game-board .board {
+      /*position: absolute;*/
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #screen-game .game-hud {
+      float:left;
+      /*clear:both;*/
+      top:1.0em;
+      width : auto;
+      height: 1.5em;
+      margin: 0 1em;
+      /*white-space: nowrap;*/
+    }
+
+    #screen-game .game-hud .hud {
+      width:100%;
+      height:100%;
+      z-index: 10;
+    }
+
+    ul.hud-overlay {
+      /*float: right;*/
+      clear: both;
+      position: absolute;
+      top:4.0em;
+      left:8.5em;
+      display: block;
+    }
+
+    ul.hud-overlay li.timer {
+      font-size:1.5em;
+      margin-left:0.75em;
+    }
+
+    ul.hud-overlay li .game-over {
+      position:absolute;
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+      background: red;
+      font-size:0.25em;
+      color:white;
+      margin-left:20em;
+    }
+
+    #screen-game footer button.exit {
+      
+   /*   margin: 0 0;*/
+      margin: 0 0;
+    }
+    #screen-game footer button.pause {
+      float: right;
+      margin-top:0.75em;
+    }
+
+    #screen-game .final-overlay .final-text {
+      text-align:center;
+      margin: 0 0;
+      padding-top: 1em;
+      padding-bottom: 0.5em;
+      padding-left:0.2em;
+    }
+
+    #screen-game ul.finalScreen {
+      margin-left: 5.5em;
+    }
+}
+
+/* Galaxy*/
+
+@media screen
+ and (min-device-width: 360px)
+ and (max-device-height: 640px)
+ and (-webkit-device-pixel-ratio : 4)
+ and (orientation: portrait) {
+
+/*    #game {
+        width: 100%;
+        height: 100%;
+        overflow:hidden;
+    }
+
+    .logo {
+  		font-size: 2em;
+  		padding-top: 1em; 
+  		padding-bottom: 2em;
+  	}*/
+
+        #game {
+      height: 100%;
+      width: 100%;
+      font-size:32px;
+    }
+
+    .logo {
+      font-size: 3em;
+      padding-top: 0.5em;
+      padding-bottom: 1.25em;
+    }
+
+
+    #screen-game .game-board {
+      position: relative;
+      width: 12em;
+      height: 12em;
+    }
+
+    #screen-game .game-board .board-bg,
+    #screen-game .game-board .board {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #screen-game .game-board .board {
+      z-index: 10;
+    }
+
+    #screen-game .game-board .board-bg {
+      z-index: 0;
+    }
+
+    #screen-game .game-hud {
+      position:relative;
+      height:2em;
+      width:8em;
+      margin: 0 2.25em;
+
+    }
+
+    #screen-game .game-hud .hud {
+      position: absolute;
+      width:100%;
+      height:100%;
+      z-index: 10;
+    }
+
+    ul.hud-overlay {
+      margin-top:0.5em;
+    }
+
+    ul.hud-overlay li.timer {
+      font-size:1.5em;
+      margin-left:0.75em;
+    }
+
+    ul.hud-overlay li .game-over {
+      position:absolute;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background: red;
+      font-size:0.35em;
+      color:white;
+
+    }
+
+    #screen-game footer {
+      margin-left:15%;
+    }
+
+}
+
+@media screen 
+  and (min-device-width: 360px) 
+  and (max-device-height: 640px)
+  and (-webkit-device-pixel-ratio : 4)
+  and (orientation: landscape) {
+    
+/*    #game {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-size:40px;
+    }
+
+    #screen-splash {
+        text-align: center;
+        padding-top: 1.5em;
+    }
+
+    #screen-splash .continue {
+        cursor: pointer;
+        font-size: 0.75em;
+    }
+
+    .logo {
+        font-size: 1.25em;
+    }
+
+    ul.menu {
+        padding-top: 0.2em;
+    }
+
+    ul.menu li {
+        margin: -0.4em 0;
+    }
+
+    ul.menu li button {
+        width: 10em;
+        height: 2em;
+        font-size: 0.3em;
+    }*/
+
+
+    #game {
+      height: 100%;
+      width: 100%;
+    }
+
+    #screen-splash .logo {
+      padding-bottom: 0.5em;
+      font-size: 2em;
+    }
+
+    #screen-splash {
+      padding-top: 0.75em;
+    }
+
+    .progress {
+      margin-top: 1em;
+    }
+
+    #screen-install .logo {
+      padding-bottom: 1em;
+    }
+
+    #screen-install span {
+      display: inline-block;
+    }
+
+/*    #screen-game .game-board {
+      position: relative;
+      width: 8em;
+      height: 8em;
+      margin-left: 6em;
+    }*/
+
+  .logo {
+      font-size: 1.5em;
+    }
+
+    ul.menu li {
+    margin: 0.2em 0;
+  }
+
+    ul.menu li button {
+      line-height: 0.05em;
+      font-size: 0.4em;
+      width: 8.5em;
+      height: 1.5em;
+    }
+
+
+
+
+    #screen-game .game-board {
+      float:left;
+      height:8em;
+      width:8em;
+    }
+
+    #screen-game .game-board .board {
+      /*position: absolute;*/
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #screen-game .game-hud {
+      float:left;
+      /*clear:both;*/
+      top:1.0em;
+      width : auto;
+      height: 1.5em;
+      margin: 0 1em;
+      /*white-space: nowrap;*/
+    }
+
+    #screen-game .game-hud .hud {
+      width:100%;
+      height:100%;
+      z-index: 10;
+    }
+
+    ul.hud-overlay {
+      /*float: right;*/
+      clear: both;
+      position: absolute;
+      top:4.0em;
+      left:8.5em;
+      display: block;
+    }
+
+    ul.hud-overlay li.timer {
+      font-size:1.5em;
+      margin-left:0.75em;
+    }
+
+    ul.hud-overlay li .game-over {
+      position:absolute;
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+      background: red;
+      font-size:0.25em;
+      color:white;
+      margin-left:5em;
+    }
+
+    #screen-game footer button.exit {
+      
+   /*   margin: 0 0;*/
+      margin: 0 0;
+    }
+    #screen-game footer button.pause {
+      float: right;
+      margin-top:0.75em;
+      
+    }
+}

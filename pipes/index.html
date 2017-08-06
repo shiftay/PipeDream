@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="height=device-height; width=device-width; initial-scale=1.0; user-scalable=no">
+		<!-- Meta for web app -->
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- Meta for web app -->	
+		<title>Pipe Mayhem</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css?v=1.4">
+		<link rel="stylesheet" type="text/css" href="css/mobile.css?v=1.7"  
+		           			   media="screen and (max-device-width: 768px) and (orientation:portrait),
+		                    		  screen and (max-device-width: 1024px) and (orientation:landscape)"> 
+		 <!-- Icons for IOS link install -->
+		<link rel="apple-touch-icon-precomposed" href="images/ios-icon.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ios-icon-ipad.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ios-icon-iphone-retina.png">
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ios-icon-ipad-retina.png">
+		<!-- Icons for IOS link install -->
+		<!-- Icons for Android install -->
+		<link rel="icon" href="images/ios-icon.png">
+		<link rel="icon" sizes="72x72" href="images/ios-icon-ipad.png">
+		<!-- Icons for Android install -->
+		<script type="text/javascript" src="js/pipeGame.js?v=1.2"></script>
+		<script type="text/javascript">
+			window.addEventListener("load", function() {
+				pipeGame.load("js/dom.js?v=1.2");
+				// if(pipeGame.isStandalone()){
+					pipeGame.load("js/screen.splash.js?v=1.2");
+					pipeGame.load("js/screen.menu.js?v=1.2");
+					pipeGame.load("js/screen.about.js?v=1")
+					// web workers?
+					pipeGame.load("js/board.js?v=1.2", pipeGame.setup);
+					pipeGame.load("js/screen.game.js?v=1.2");
+					pipeGame.load("js/display.canvas.js?v=1.2");
+					pipeGame.load("js/input.js?v=1.3");
+				// } else {
+				// // 	if(pipeGame.detectOS() === "iOS") {
+				// 		pipeGame.load("js/screen.install.js", pipeGame.setup);
+				// // 	} else {
+				// // 		pipeGame.load("js/screen.install.android.js", pipeGame.setup)
+				// // 	}
+				// }
+			});
+			// Prevents moving of the screen iOS
+			document.ontouchmove = function(e) {
+				e.preventDefault();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="game">
+			<!-- game goes here -->
+			<div class="screen" id="screen-splash">
+				<h1 class="logo">Pipe <br> Mayhem </h1>
+				<div class="progress">
+					<div class="indicator"></div>
+				</div>
+				<span class="continue"> CLICK TO CONTINUE </span>
+			</div>
+			<div class="screen" id="screen-menu">
+				<h2 class="logo">Pipe <br> Mayhem </h2>
+				<ul class="menu">
+					<li><button name="screen-game">PLAY</button></li>
+					<li><button name="screen-about">ABOUT</button></li>
+					<li><button name="screen-quit">QUIT</button></li>
+				</ul>
+			</div>
+			<div class="screen" id="screen-game">
+				<div class="game-board">
+					<!-- canvas will be generated here -->
+				</div>
+				<div class="game-hud">
+
+				</div>
+				<ul class="hud-overlay">
+					<li class="timer"></li>
+					<li><button class="game-over"> RELEASE </button></li>
+				</ul>
+				<footer>
+					<button class="exit">Exit</button>
+					<button class="pause">Pause</button>
+				</footer>
+				<div class="pause-overlay">
+					<div class="pause-text">Paused</div>
+				</div>
+				<div class="final-overlay">
+					<div class="final-text"></div>
+					<ul class="finalScreen">
+						<li> <span name="screen-game"> PLAY AGAIN </span> </li>
+						<li> <span name="screen-menu"> 	MAIN MENU </span> </li>
+					</ul>
+				</div>
+			</div>
+			<div class="screen" id="screen-about">
+				<h2 class="logo">Pipe <br> Mayhem </h2>
+				<div>
+					<ul class="about-text">
+						<li>CREATED BY STEPHEN ROEBUCK</li>
+						<li>ART BY KENNEY FOUND AT KENNEY.NL</li>
+					</ul>
+				</div>
+				<footer class="return" name="screen-menu">
+					MAIN MENU
+				</footer>
+			</div>
+			<div class="screen" id="screen-install">
+				<h2 class="logo">Pipe <br> Mayhem </h2>
+				<span>
+					Click the <img src="images/share-icon.png" alt="Share icon">
+					button <br> followed by <img src="images/home-icon.png" alt="Add to home screen"> to install <br> the game to your home screen.
+				</span>
+			</div>
+			<div class="screen" id="screen-install-android">
+				<h2 class="logo">Pipe <br> Mayhem </h2>
+				<span>
+					CLICK THE MORE BUTTON FOLLOWED BY THE <i>ADD TO HOME SCREEN BUTTON</i> TO INSTALL THE GAME.
+				</span>
+			</div>
+		</div>
+	</body>
+</html>
